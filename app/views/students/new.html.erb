@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Tera SignUp</title>
+  </head>
+  <body>
+    <div class="container">
+      <%= form_for @student do |f| %>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :studentid %>
+          <%= f.text_field :userid%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :Password %>
+          <%= f.password_field :password %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :FirstName %>
+          <%= f.text_field :firstname %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :LastName %>
+          <%= f.text_field :lastname %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :FatherName %>
+          <%= f.text_field :fathername %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :Department %>
+          <%= f.text_field :dept %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :Year %>
+          <%= f.text_field :year %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :Semaster %>
+          <%= f.text_field :sem %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :LibraryId %>
+          <%= f.text_field :libid %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :BloodGroup %>
+          <%= f.text_field :bgroup %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :EmailId %>
+          <%= f.text_field :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :MobileNo%>
+          <%= f.text_field :mobno %>
+        </div>
+      </div>
+      <div class="waves-effect waves-light btn center">
+        <center>
+          <%= f.submit "SignUp" %>
+        </center>
+      </div>
+      <br><br>
+
+    <% end %>
+
+  </div>
+
+  <style media="screen">
+    .mine{
+      color:red;
+    }
+  </style>
+</body>
+</html>

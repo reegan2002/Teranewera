@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tera Welcome Page!</title>
+
+  </head>
+
+  <body style="background-image:url(assets/index.jpg);background-size:cover;background-repeat:no-repeat;background-position:center center;background-attachment: fixed;">
+    <center>
+      <img src="assets/indexwow.png" style="width: 200px;height: 200px;">
+    </center>
+    <div >
+      <br><br><br><br><br/>
+      <h5 style="text-align:center;">
+        <a onclick="student()" id="tis" style="color:blueviolet;">Student</a>
+        <span style="color:red;">|</span>
+        <a onclick="faculty()" id="tif" style="color:white;">Faculty</a>
+      </h5>
+
+      <div id="student">
+        <div class="container" style="width:300px">
+          <%= form_for(:tera) do |l| %>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= l.label "UserId" %>
+              <%= l.text_field "userid"%>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <%= l.label "Password" %>
+              <%= l.password_field "password" %>
+            </div>
+          </div>
+          <%= submit_tag "LogIn" , class: "mybtn"%>
+
+        <% end %>
+      </div>
+      <br>
+
+    </div>
+    <div >
+      <div id="faculty" style="display:none;">
+        <div class="container" style="width:300px">
+          <%= form_for(:tera) do |l| %>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= l.label "FacultyId" %>
+              <%= l.text_field "facid"%>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <%= l.label "Password" %>
+              <%= l.password_field "password" %>
+            </div>
+          </div>
+          <%= submit_tag "Faculty LogIn", class: 'mybtn'%>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var s = document.getElementById("student");
+  var f = document.getElementById("faculty");
+  function student() {
+    document.getElementById("student").style.display = "block";
+    document.getElementById("tis").style.color = "blueviolet";
+    document.getElementById("tif").style.color = "white";
+    document.getElementById("faculty").style.display = "none";
+  }
+  function faculty() {
+    document.getElementById("faculty").style.display = "block";
+    document.getElementById("tis").style.color = "white";
+    document.getElementById("tif").style.color = "blueviolet";
+    document.getElementById("student").style.display = "none";
+  }
+</script>
+
+<style media="screen">
+  .mybtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 15px;
+    height:50px;
+    background-color:red;
+    border:none;
+    color:white;
+    font-size:20px;
+  }
+</style>
+
+</body>
+</html>

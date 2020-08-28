@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Profile</title>
+  </head>
+  <body style="background-image:url(assets/profile.jpg);background-size:cover;background-color:#FF0060;background-repeat:no-repeat;background-position:center center;background-attachment: fixed;">
+    <div style="background-color:green;">
+      <nav style="bottom:0px;position:fixed;width:33.33%;background-color:white;border:none;margin:none;">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/home" class="brand-logo center"><img src="https://img.icons8.com/material-outlined/30/000000/home--v2.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav style="bottom:0px;left:33.33%;position:fixed;width:33.33%;background-color:white;border:none;margin:none;">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/book" class="brand-logo center"><img src="https://img.icons8.com/ios/30/000000/book-shelf.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav style="bottom:0px;left:66.66%;position:fixed;width:33.33%;background-color:white;border:none;margin:none;">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/profile" class="brand-logo center">
+                <img src="https://img.icons8.com/ios-filled/30/000000/user.png"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <h2 style="text-align:center;color:white;font-size:32px;"><%= @student.firstname+'.'+@student.lastname %></h2>
+    <p style="justify-contant:center;text-align:center;font-size:22px;color:white;"><%= @student.dept+'-'+@student.year %></p>
+
+    <div class="container" style="text-align:center;font-size:18px;color:white;">
+      <b>
+        <p>User Id :
+          <%= @student.userid %></p>
+        <p>Father Name :
+          <%= @student.fathername %></p>
+        <p>Library Id :
+          <%= @student.libid %></p>
+      </b>
+    </div>
+
+    <div class="container" style="display:container;bottom:50px;left:5%;position:absolute;justify-contant:center;">
+      <a href="/chat">
+        <button style="height:60px;width:100%;background-color:white;border: 2px solid #FE0074;justify-contant:center;opacity: 0.8;" type="button" name="button">Chat Room</button>
+      </a><br><br>
+      <a href="#">
+        <button style="height:60px;width:100%;background-color:white;border: 2px solid #FE0074;justify-contant:center;opacity: 0.8;" type="submit">Result</button>
+      </a><br><br>
+      <a href="/logout">
+        <button style="height:60px;width:100%;background-color:white;border: 2px solid #FE0074;justify-contant:center;opacity: 0.8;" type="submit">Logout</button>
+      </a><br><br>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Tera User</title>
+  </head>
+  <body style="background-image:url(assets/home.jpg);background-size:cover;background-color:#FF0060;background-repeat:no-repeat;background-position:center center;background-attachment: fixed;">
+    <div style="background-color:green;">
+      <nav style="bottom:0px;position:fixed;width:33.33%;background-color:white;border:none">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/home" class="brand-logo center">
+                <img src="https://img.icons8.com/material-sharp/30/000000/home.png"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav style="bottom:0px;left:33.33%;position:fixed;width:33.33%;background-color:white;border:none">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/book" class="brand-logo center"><img src="https://img.icons8.com/ios/30/000000/book-shelf.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav style="bottom:0px;left:66.66%;position:fixed;width:33.33%;background-color:white;border:none">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/profile" class="brand-logo center"><img src="https://img.icons8.com/ios/30/000000/user.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div>
+      <% opps = ["CS8392","Object Oriented Programming","Dr. Jose, AP/CSE - DMICE","https://meet.google.com/gvr-jovw-buq"] %>
+      <% dpsd = ["CS8351","Digital Principles and System Design","Mr. X. Jushwanth Xavier, AP/ECE - DMICE","https://meet.google.com/gvr-jovw-buq"] %>
+      <% dm = ["MA8351","Discrete Mathematics","R. Malarkodi HOD/S&H - SJCET","https://meet.google.com/rhx-fysm-xfp"] %>
+      <% ce = ["EC8395","Communication Engineering","Ms. Brintha, ASP/ECE - DMICE","https://meet.google.com/gvr-jovw-buq"] %>
+      <% ds = ["CS8391","Data Structures","Dr. S. Mangaiarkarasi, HOD/CSE - SJCET","https://meet.google.com/rhx-fysm-xfp"]  %>
+      <% dm1 = ["MA8351","Discrete Mathematics","R. Malarkodi HOD/S&H - SJCET","https://meet.google.com/rhx-fysm-xfp"] %>
+      <% meet = "" %>
+      <% meet1 = "" %>
+      <% meet2 = "" %>
+      <% state = "" %>
+      <% state1 = "" %>
+      <% state2 = "" %>
+      <% date = Time.now  %>
+      <% time = date.strftime('%H')+':'+date.strftime('%M')+':'+date.strftime('%S')%>
+      <% datetime = date.strftime('%w') %>
+
+      <% if date.monday? %>
+        <% meet = opps %>
+        <% meet1 = dpsd %>
+        <% meet2 = ds %>
+      <% elsif date.tuesday? %>
+        <% meet = dm %>
+        <% meet1 = dm1 %>
+        <% meet2 = ce %>
+      <% elsif date.wednesday? %>
+        <% meet = opps %>
+        <% meet1 = dpsd %>
+        <% meet2 = ds %>
+      <% elsif date.thursday? %>
+        <% meet = dm %>
+        <% meet1 = dpsd %>
+        <% meet2 = ce %>
+      <% elsif date.friday? %>
+        <% meet = opps %>
+        <% meet1 = dpsd %>
+        <% meet2 = ds %>
+      <% elsif date.saturday? %>
+        <% meet = dm %>
+        <% meet1 = opps %>
+        <% meet2 = ce %>
+      <% else %>
+
+      <% end %>
+
+      <% if time >= "00:00:00" && time <= "08:59:59" %>
+        <% state = "Please Wait" %>
+      <% elsif time >= "09:00:00" && time <= "09:59:59" %>
+        <% state = "In Live" %>
+      <% else %>
+          <% state = "Finised" %>
+          <% meet[3] = "#" %>
+      <% end %>
+
+      <% if time >= "00:00:00" && time <= "10:59:59" %>
+        <% state1 = "Please Wait" %>
+      <% elsif time >= "11:00:00" && time <= "11:59:59" %>
+        <% state1 = "In Live" %>
+      <% else %>
+        <% state1 = "Finised" %>
+        <% meet1[3] = "#" %>
+      <% end %>
+
+      <% if time >= "00:00:00" && time <= "12:59:59" %>
+        <% state2 = "Please Wait" %>
+      <% elsif time >= "13:00:00" && time <= "13:59:59" %>
+        <% state2 = "In Live" %>
+      <% else %>
+        <% state2 = "Finised" %>
+        <% meet2[3] = "#" %>
+      <% end %>
+
+      </div>
+
+
+      <div class="container">
+        <br>
+        <button style="background-color:gray;border:2px solid black;width:100%;border-radius: 15px;height:200px;">
+          <h5><%= meet[0]+'-'+meet[1] %></h5><br>
+          <h6><%= meet[2] %></h6><br>
+          <h6><a href=<%= meet[3] %>>Meet link here</a></h6>
+        </button>
+        <br><br>
+        <button style="background-color:gray;border: 2px solid black;width:100%;border-radius: 15px;height:200px;">
+          <h5><%= meet1[0]+'-'+meet1[1] %></h5><br>
+          <h6><%= meet1[2] %></h6><br>
+          <h6><a href=<%= meet1[3] %>>Meet link here</a></h6>
+        </button>
+        <br><br>
+        <button style="background-color:gray;border:2px solid black;width:100%;border-radius: 15px;height:200px">
+          <h5><%= meet2[0]+'-'+meet2[1] %></h5><br>
+          <h6><%= meet2[2] %></h6><br>
+          <h6><a href=<%= meet2[3] %>>Meet link here</a></h6>
+        </button>
+      </div>
+
+
+      <div>
+        <%= state %>
+        <%= state1 %>
+        <%= state2 %>
+        <%= meet %>
+        <%= meet1 %>
+        <%= meet2 %>
+        <%= @student.fathername %>
+        <h1>Welcome User</h1>
+      </div>
+
+
+  </body>
+</html>
